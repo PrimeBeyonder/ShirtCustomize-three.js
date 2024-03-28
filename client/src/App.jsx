@@ -1,8 +1,9 @@
-function App() {
-  return (
-    <div>
+import React from 'react'
 
-    </div>
+const App = () => {
+  return (
+    <div className="head-text">Three Js</div>
+
   )
 }
 
