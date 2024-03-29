@@ -1,9 +1,25 @@
-import React from 'react'
+import React from 'react';
+import { Canvas } from "@react-three/fiber";
+import Shirt from "./Shirt";
+import Backdrop from "./Backdrop";
+import CameraRig from "./CameraRig";
+import { Center, Environment } from '@react-three/drei';
 
-const Canvas = () => {
+const CanvasModal = () => {
     return (
-        <div>Canvas</div>
+        <Canvas
+            className="w-full max-w-full h-full transition-all ease-in"
+        >
+            <ambientLight intensity={0.5} />
+            <Environment preset='city' />
+            <CameraRig>
+            {/* <Backdrop /> */}
+            <Center>
+                <Shirt />
+            </Center>
+            </CameraRig>
+        </Canvas>
     )
 }
 
-export default Canvas
+export default CanvasModal
