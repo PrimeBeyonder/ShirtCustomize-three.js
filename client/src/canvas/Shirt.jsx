@@ -18,14 +18,31 @@ const Shirt = () => {
             <mesh
                 castShadow
                 geometry={nodes.T_Shirt_male.geometry}
-                material-roughness={1}
                 material={materials.lambert1}
+                material-roughness={1}
                 dispose={null}
             >
+                {snap.isFullTexture && (
+                    <Decal
+                        position={[0, 0, 0]}
+                        rotation={[0, 0, 0]}
+                        scale={1}
+                        map={fullTexture}
+                    />
+                )}
+                {snap.isLogoTexture && (
+                    <Decal
+                        position={[0.01, 0.06, 0.15]}
+                        rotation={[0, 0, 0]}
+                        scale={0.14}
+                        map={logoTexture}
+                    />
+                )}
+
 
             </mesh>
         </group>
     )
 }
 
-export default Shirt
+export default Shirt;
